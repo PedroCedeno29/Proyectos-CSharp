@@ -1,0 +1,47 @@
+//Simulacion de juego de dados
+//Si dos dados cualesquiera muestran el mismo valor, se obtienen dos puntos extra por obtener un doble.
+//Si los tres dados muestran el mismo valor, se obtienen seis puntos extra por obtener un triple.
+//Si la suma de los tres dados, junto con los puntos extra, es igual o mayor que 15, gana el juego. De lo contrario, pierde.
+
+Console.WriteLine("BIENVENIDO AL JUEGO DE DADOS\n");
+
+int contador = 0;
+
+Random tiro1 = new Random();
+Random tiro2 = new Random();
+Random tiro3 = new Random();
+
+int dado1 = tiro1.Next(1,7);
+int dado2 = tiro2.Next(1,7);
+int dado3 = tiro3.Next(1,7);
+
+Console.WriteLine($"Primer dado: {dado1}");
+Console.WriteLine($"Segundo dado: {dado2}");
+Console.WriteLine($"Tercer dado: {dado3}\n");
+
+contador = dado1 + dado2 + dado3;
+
+Console.WriteLine($"Puntos obtenidos: {contador}\n");
+
+
+if(dado1 == dado2  || dado1 == dado3  ||  dado2 == dado3)
+{
+    Console.WriteLine("HAS OBTENIDO UN DOBLE! CONSIGUES 2 PUNTOS EXTRAS!\n");
+    contador+=2;
+}
+
+if (dado1 == dado2 &&  dado1 == dado3)
+{
+    Console.WriteLine("HAS OBTENIDO UN TRIPLE! CONSIGUES 3 PUNTOS EXTRAS!\n");
+    contador+=6;
+}
+
+
+Console.WriteLine($"Sus puntos totales son: {contador}\n");
+
+if (contador >= 15)
+{
+    Console.WriteLine("HAS GANADO EL JUEGO! FELICIDADES!!!\n");
+
+}
+else{ Console.WriteLine("Has perdido el juego. Intenta de nuevo. Buena suerte!\n");}
