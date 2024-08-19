@@ -1,0 +1,27 @@
+using System.ComponentModel.DataAnnotations;
+
+Random random = new Random();
+int daysUntilExpiration = random.Next(12);
+int discountPercentage = 0;
+
+if (daysUntilExpiration >=6 && daysUntilExpiration <= 11)
+{
+    Console.WriteLine("Your subscription will expire soon. Renew now!"); 
+}
+if (daysUntilExpiration <= 5)
+{
+    if (daysUntilExpiration == 1)
+    {
+        discountPercentage = 20;
+        Console.WriteLine($"Your subcription expires within a day!\nRenew now and save {discountPercentage}%!");
+    }
+    else if (daysUntilExpiration == 0) 
+    {
+        Console.WriteLine("Your subcription has expired.");
+    }
+    else 
+    {
+        discountPercentage = 10;
+        Console.WriteLine($"your subcription expires in {daysUntilExpiration} days.\nRenew now and save {discountPercentage}%!");
+    }
+}
