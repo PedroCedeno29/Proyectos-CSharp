@@ -4,7 +4,6 @@
 //Si la suma de los tres dados, junto con los puntos extra, es igual o mayor que 15, gana el juego. De lo contrario, pierde.
 
 Console.WriteLine("BIENVENIDO AL JUEGO DE DADOS\n");
-
 int contador = 0;
 
 Random tiro1 = new Random();
@@ -26,16 +25,17 @@ Console.WriteLine($"Puntos obtenidos: {contador}\n");
 
 if(dado1 == dado2  || dado1 == dado3  ||  dado2 == dado3)
 {
-    Console.WriteLine("HAS OBTENIDO UN DOBLE! CONSIGUES 2 PUNTOS EXTRAS!\n");
-    contador+=2;
+    if (dado1 == dado2 &&  dado2 == dado3)
+    {
+          Console.WriteLine("HAS OBTENIDO UN TRIPLE! CONSIGUES 3 PUNTOS EXTRAS!\n");
+         contador+=6;
+    }
+    else 
+    {
+         Console.WriteLine("HAS OBTENIDO UN DOBLE! CONSIGUES 2 PUNTOS EXTRAS!\n");
+         contador+=2;
+    }
 }
-
-if (dado1 == dado2 &&  dado1 == dado3)
-{
-    Console.WriteLine("HAS OBTENIDO UN TRIPLE! CONSIGUES 3 PUNTOS EXTRAS!\n");
-    contador+=6;
-}
-
 
 Console.WriteLine($"Sus puntos totales son: {contador}\n");
 
