@@ -1,5 +1,8 @@
-string permission = "Admin";
-int level = 51;
+Console.WriteLine("Insert your position:");
+string permission = Console.ReadLine();
+
+Console.WriteLine("Insert your level: ");
+int level = int.Parse(Console.ReadLine());
 
 if (permission.Contains("Admin"))
 {
