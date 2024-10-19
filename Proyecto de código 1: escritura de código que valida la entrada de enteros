@@ -1,0 +1,28 @@
+int numericValue = 0;
+bool validNumer = false;
+bool valid = false;
+
+
+do
+{
+    Console.WriteLine("Enter a number between 5 and 10:");
+
+    validNumer = int.TryParse(Console.ReadLine(), out numericValue);
+    if(validNumer == true)
+    {
+        if(numericValue < 5 || numericValue > 10)
+        {
+            Console.WriteLine("Number out of range. Please enter a number between 5 and 10.");
+        }
+        else 
+        {
+            valid = true;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Enter a valid integer");
+    }
+    Console.WriteLine("");
+} while(valid == false);
+Console.WriteLine($"Your number {numericValue} is inside de range.");
