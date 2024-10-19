@@ -1,0 +1,19 @@
+string? rol;
+bool validEntry = false;
+
+do 
+{
+    Console.WriteLine("Enter your rol (administrator, director or user)");
+    rol = Console.ReadLine()?.ToLower().Trim();
+
+    if (rol != null && (rol == "administrador" || rol == "director" || rol =="user"))
+    {
+        validEntry = true;
+    }
+    else
+    {
+        Console.WriteLine($"The role: {rol} does not exist. Please enter a valid one.\n");
+    }
+} while(validEntry == false);
+
+Console.WriteLine($"Your input value ({rol}) has been acepted.");
