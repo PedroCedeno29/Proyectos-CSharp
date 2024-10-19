@@ -1,0 +1,33 @@
+Random random = new Random();
+
+//Characters start heath points
+int herops = 10;
+int monsterps = 10;
+
+//Characters attack
+int heroattack = 0;
+int monsterattack = 0;
+
+Console.WriteLine("WELCOME TO THE ASCENT OF THE SHIELD HERO.");
+do
+{
+    if(herops > 0)
+    {
+        heroattack = random.Next(1,11);
+        monsterps -= heroattack;
+        Console.WriteLine($"Monster was damaged with: {heroattack} points of attack");
+        Console.WriteLine($"Monster restant health: {monsterps} points");
+
+        if (monsterps > 0)
+        {
+            monsterattack = random.Next(1,11);
+            herops -= monsterattack;
+            Console.WriteLine($"Hero was damaged with: {monsterattack} point of attack");
+            Console.WriteLine($"Hero restant health: {herops} points");
+        }
+        else{continue;}
+    }
+    else
+    {continue;}
+} while (herops > 0 && monsterps > 0);
+Console.WriteLine(herops > monsterps ? "Hero wins" : "Monster wins");
