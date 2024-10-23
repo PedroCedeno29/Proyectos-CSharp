@@ -1,0 +1,40 @@
+string [] myStrings = new string[2] {"I like pizza. I like roast chicken. I like salad" , "I like all three of the menu choices"};
+
+string myString = "";
+int periodLocation = 0;
+
+for (int i=0; i<myStrings.Length; i++)
+{
+    //Lay up the array values in myString.
+    myString = myStrings[i];
+
+    //Store the position of the period.
+    periodLocation = myString.IndexOf(".");
+
+    //Variable that stores sentences one by one.
+    string mySentence;
+
+    while(periodLocation != -1) //Use -1 to verify that the array still have period.
+    //When periodLocation = -1 it means that are not more period in the string. 
+    {
+        //Remove the strings after the period and store the first sentence.
+        mySentence = myString.Remove(periodLocation);
+
+        //Lay up the string after the period.
+        myString = myString.Substring(periodLocation + 1);
+
+        //Remove the first space after de period
+        myString = myString.TrimStart();
+
+        //Reset the variable "periodLocation" with a new position.
+        periodLocation = myString.IndexOf(".");
+        
+        //show the sentence
+        Console.WriteLine(mySentence);
+    }
+
+    mySentence = myString.Trim();
+    Console.WriteLine(mySentence);
+
+
+}
