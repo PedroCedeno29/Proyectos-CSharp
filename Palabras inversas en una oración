@@ -1,14 +1,15 @@
 string pangram = "The quick brown fox jumps over the lazy dog";
 string []message = new string[pangram.Length]; 
 
+//Se crea un segundo arreglo para almacenar cada palabra de la cadena.
 //Split() divide each word of the string (when it find a space between the words) to be added in the new string array.
 string[]palabras = pangram.Split(' ');
 
 for (int i=0; i<palabras.Length; i++)
 {
-    //El arreglo de caracteres almacena cada letra de cada palabra
+    //se crea un tercer arreglo de caracteres que almacena cada letra de cada palabra
     char[]letras = palabras[i].ToCharArray();
-    Array.Reverse(letras);
+    Array.Reverse(letras); //Se invierte la palabra 
     //convierte el array de caracteres invertido en una nueva cadena y la almacena en el array newMessage en la misma posición
     message[i] = new string(letras);
 
